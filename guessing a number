@@ -1,0 +1,24 @@
+class Error(Exception):
+    pass
+class ValueTooSmallError(Error):
+    pass
+class ValueTooLargeError(Error):
+    pass
+#you need to guess this number
+number = 4
+#user guesses a number until he /she gets it right
+while True:
+   try:
+       i_num = int(input("Enter a number :"))
+       if i_num < number :
+           raise ValueTooSmallError
+       elif i_num>number:
+           raise ValueTooLargeError
+       break
+   except ValueTooSmallError:
+        print("This value is too small ,Try again!")
+   except ValueTooLargeError :
+        print("This value is too large , Try again!")
+        print()
+
+print("CONGRAGULATIONS! you guessed it correctly .")
